@@ -67,9 +67,4 @@ Common NpgsqlDataReader Methods</br>
 |IsDBNull	|	True if the value in a column is NULL  |
 |Read	|	Advances the data reader to the next row   |
 
-NpgsqlEventLog Properties</BR>
-|Property	|	Meaning	|
-| ----- 	| -----		|
-|EchoMessages	|	Sets if message should be printed to the console: true or false|
-|Level	|	Sets the level of messages required: None, Normal, or Debug|
-|Logname	|	Sets the name of the file to write to, if required|
+
