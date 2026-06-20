@@ -20,3 +20,11 @@ NpgsqlConnection Properties</BR>
 |Database	|	Gets the name of the current database	|
 |ServerVersion	|	Gets the version of the server currently connected to	|
 |State	|	Gets the current state of the connection	|
+
+Common NpgsqlConnection Methods</BR>
+|Method	|	Meaning	|
+| ----- 	| -----		|
+|BeginTransaction	|	Starts a transaction and optionally passes an isolation level to use |
+|ChangeDatabase	|	Closes the connection and reconnects to a different database |
+|Close	|	Closes the connection, or, if using connection pooling, releases the connection back to the pool |
+|Open	|	Opens the connection|
