@@ -12,3 +12,11 @@ Connection String Options</BR>
 |MinPoolSize | Sets the lower bound of the connection pool size |
 |MaxPoolSize | Sets the upper bound of the connection pool size |
 |Timeout | Sets the time to wait for a connection before timing out |
+
+NpgsqlConnection Properties</BR>
+|Property	|	Meaning	|
+| ----- 	| -----		|
+|ConnectionString	|	Gets or sets the connection string	|
+|Database	|	Gets the name of the current database	|
+|ServerVersion	|	Gets the version of the server currently connected to	|
+|State	|	Gets the current state of the connection	|
