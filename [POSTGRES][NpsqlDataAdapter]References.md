@@ -21,6 +21,16 @@ NpgsqlConnection Properties</BR>
 |ServerVersion	|	Gets the version of the server currently connected to	|
 |State	|	Gets the current state of the connection	|
 
+Common NpgsqlCommand Properties</BR>
+|Method	|	Meaning	|
+| ----- 	| -----		|
+|CommandText	|	Allows the command text to be retrieved or set|
+|CommandTimeout	|	Sets how long the system will wait for the command to execute before terminating it|
+|CommandType	|	Sets or gets the type of command; by default, this is Text for executing SQL statements, but can also be Stored Procedure when the command is to execute a stored procedure|
+|Connection	|	Sets or gets the connection object to be used|
+|Parameters	|	Allows access to parameters for prepared statements|
+|Transaction |	Sets or gets the transaction in which the command is to execute|
+
 Common NpgsqlConnection Methods</BR>
 |Method	|	Meaning	|
 | ----- 	| -----		|
