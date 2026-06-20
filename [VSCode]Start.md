@@ -1,15 +1,13 @@
 ```
 dotnet new sln --name  chapter01
 
-dotnet new console --output hellocs
-dotnet sln add hellocs
-
-
+Syntax:
+dotnet new console -o <project_name> --use-program-main
+dotnet sln add <project_name>
 dotnet run
-```
 
-
-```
-
-dotnet new console --use-program-main
+E.g:
+dotnet new console -o AboutMyEnvironment --use-program-main
+dotnet sln add AboutMyEnvironment
+dotnet run
 ```
