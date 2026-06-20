@@ -38,3 +38,12 @@ Common NpgsqlConnection Methods</BR>
 |ChangeDatabase	|	Closes the connection and reconnects to a different database |
 |Close	|	Closes the connection, or, if using connection pooling, releases the connection back to the pool |
 |Open	|	Opens the connection|
+
+Common NpgsqlDataReader Properties</BR>
+|Property	|	Meaning	|
+| ----- 	| -----		|
+|FieldCount	| Provides the number of columns in the data row |
+|HasRows	| Set to true if there is one or more rows of data ready to be read |
+|IsClosed |	Set to true if the data reader has been closed |
+|Item	|	Retrieves the column in its native format |
+|RecordsAffected	|Provides the number of rows affected by the SQL statement |
