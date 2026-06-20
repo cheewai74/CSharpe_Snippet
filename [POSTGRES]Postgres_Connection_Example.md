@@ -1,4 +1,9 @@
 Note: Stop using ODBC, it's not stable, use  Npgsql instead.</BR>
+Precondition:</BR>
+```
+dotnet add package Npgsql
+```
+Example Code</BR>
 ```
 // vs-connect.cs
 
