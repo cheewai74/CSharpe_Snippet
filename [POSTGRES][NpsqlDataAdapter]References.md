@@ -47,3 +47,22 @@ Common NpgsqlDataReader Properties</BR>
 |IsClosed |	Set to true if the data reader has been closed |
 |Item	|	Retrieves the column in its native format |
 |RecordsAffected	|Provides the number of rows affected by the SQL statement |
+
+Common NpgsqlDataReader Methods</br>
+|Method	|	Meaning	|
+| ----- 	| -----		|
+|Close	|	Closes the data reader object |
+|Dispose	|	Releases all the resources in use |
+|GetBoolean	|Gets a column value as a Boolean value |
+|GetDateTime	|	Gets a column value as a datetime value         |
+|GetDecimal	|	Gets a column value as a decimal number |
+|GetDouble	|	Gets a column value as a double |
+|GetFieldType|	Returns the data type of the column at an index position |
+|GetFloat	|	Gets a column value as a floating-point number |
+|GetInt16	|	Gets a column value as a 16-bit integer |
+|GetInt32	|	Gets a column value as a 32-bit integer  |
+|GetInt64	|	Gets a column value as a 64-bit integer |
+|GetName		|	Gets the column name of a column by index  |
+|GetString	|	Gets a column value as a string  |
+|IsDBNull	|	True if the value in a column is NULL  |
+|Read	|	Advances the data reader to the next row   |
