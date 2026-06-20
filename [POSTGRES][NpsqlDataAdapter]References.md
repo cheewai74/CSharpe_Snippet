@@ -67,4 +67,101 @@ Common NpgsqlDataReader Methods</br>
 |IsDBNull	|	True if the value in a column is NULL  |
 |Read	|	Advances the data reader to the next row   |
 
+Sample Code</BR>
+```
+namespace postgres_test_connection;
+
+using System;
+using System.Data;
+using Npgsql;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        var conn = new NpgsqlConnection("Host=127.0.0.1;Username=postgres;Password=password;Database=sandbox");
+        try{
+            conn.Open();
+
+            Console.WriteLine("Version: {0}", conn.PostgreSqlVersion);
+            Console.WriteLine("State: {0}, Server Version: {1}", conn.State, conn.ServerVersion);
+
+            string sql = "SELECT * FROM apress.customer";
+
+            using var adapter = new NpgsqlDataAdapter(sql, conn);
+
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
+
+            foreach (DataRow dr in dt.Rows)
+            {
+                Console.WriteLine("Name: {0}, {1}, {2}",
+                    dr["customer_id"], dr["fname"], dr["lname"]);
+            }
+            Console.WriteLine();
+
+            // NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM apress.orderinfo", conn);
+            // NpgsqlDataReader datard = cmd.ExecuteReader();
+            // while (datard.Read()){
+            //     for (int i=0; i < datard.FieldCount; i++){
+            //         Console.Write("{0}, ",datard[i]);
+            //     }
+            // }
+
+            // NpgsqlCommand cmd2 = new NpgsqlCommand(
+            // "SELECT * FROM apress.customer WHERE customer_id = :cid OR fname = :fn", conn);
+            // cmd2.Parameters.Add(new NpgsqlParameter("cid", DbType.Int32));
+            // cmd2.Parameters.Add(new NpgsqlParameter("fn", DbType.String));
+            // cmd2.Parameters[0].Value = 2;
+            // cmd2.Parameters[1].Value = "Jenny";
+            // NpgsqlDataReader datard2 = cmd2.ExecuteReader();
+
+            // while (datard2.Read()) {
+            //     for (int i = 0; i < datard2.FieldCount; i++) {
+            //     Console.Write("{0}, ", datard2[i]);
+            //     }
+            // Console.WriteLine();
+            // }
+
+            // NpgsqlCommand cmd = new NpgsqlCommand(
+            // "SELECT * FROM apress.customer WHERE customer_id = :cid OR fname = :fn", conn);
+            // cmd.Parameters.Add(new NpgsqlParameter("cid", DbType.Int32));
+            // cmd.Parameters.Add(new NpgsqlParameter("fn", DbType.String));
+            // cmd.Prepare(); // We prepare the statement before executing it the first time, and we can then simply change the
+            //                // values of parameters, without needing to rebind them to NpgsqlParameter objects, and reexecute
+            //                // the statement.
+            // cmd.Parameters[0].Value = 2;
+            // cmd.Parameters[1].Value = "Jenny";
+            // NpgsqlDataReader datard = cmd.ExecuteReader();
+            // while (datard.Read()) {
+            // for (int i = 0; i < datard.FieldCount; i++) {
+            // Console.Write("{0}, ", datard[i]);
+            // }
+            // Console.WriteLine();
+            // }
+            // datard.Close();
+            // cmd.Parameters[0].Value = 3;
+            // cmd.Parameters[1].Value = "Adrian";
+            // datard = cmd.ExecuteReader();
+            // while (datard.Read()) {
+            // for (int i = 0; i < datard.FieldCount; i++) {
+            // Console.Write("{0}, ", datard[i]);
+            // }
+            // Console.WriteLine();
+            // }
+
+
+            // NpgsqlCommand cmd = new NpgsqlCommand("INSERT INTO apress.customer(title, fname, lname, addressline, town, zipcode, phone) VALUES('Mr.', 'Simoner', 'Bennett','1 Victoria Street', 'Nicetown', 'NT4 2WS', '342 6352')", conn);
+            // int rowsaffected = cmd.ExecuteNonQuery();
+            // Console.Write("Rows affected {0}", rowsaffected);
+                
+        }
+        finally{
+            conn.Close();
+        }
+    }
+}
+
+```
+
 
