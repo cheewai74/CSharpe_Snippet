@@ -2,3 +2,4 @@
 | -----            | -----     |
 | dotnet --version  |  Check version |
 |dotnet new class -n ClassName |E.g: dotnet new class -n Person|
+|dotnet new gitignore |     |
